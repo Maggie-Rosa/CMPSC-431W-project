@@ -4,7 +4,7 @@ The data tables come from https://www.kaggle.com/datasets/open-source-sports/bas
 The tables used in the actual implementation are included in the folder labeled "Tables". This is becuase I did not include every single cloumn from the Kaggle dataset and I also split a few of the tables into multiple tables so that they would follow Boyce-Codd Normal Form (BCNF).
 I have also included the Entity-Relationship Diagram from which the tales were based on.
 
-##The following functionalities are implemented in the database management system:
+## The following functionalities are implemented in the database management system:
 1. Insert Data: Allow adding new records to tables.
 2. Delete Data: Enable removing specific records from tables.
 3. Update Data: Support modifying existing records in tables.
@@ -18,7 +18,7 @@ I have also included the Entity-Relationship Diagram from which the tales were b
 11. Error Handling: Catch and handle exceptions gracefully during database operations
 12. Exit: Exits the CLI entirely
 
-##In order to use the CLI program properly the following steps must be followed:
+## In order to use the CLI program properly the following steps must be followed:
 1. First you muct select one of the above functionalities you would like to complete by typing in the number corresponding to that functionality.
 2. Follow the on-screen instructions provided and when you have finished typing you response, press the enter key.
 3. You may not exit a functionality once you have selected it, so make sure you choose the correct one.
