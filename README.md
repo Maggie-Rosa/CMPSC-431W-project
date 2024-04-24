@@ -29,3 +29,6 @@ I have also included the Entity-Relationship Diagram from which the tales were b
 8. '>>' indicates that the input requested is going to be used in a query.
 9. '>>>>' indicates you may now select one of the functionalities given in the welcome message.
     
+## Detailed descriptions of each Functionality:
+1. INSERT
+   - Allow adding new records to tables.
