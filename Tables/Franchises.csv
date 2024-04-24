@@ -1,0 +1,121 @@
+franchID,franchName,active
+ALT,Altoona Mountain City,FALSE
+ANA,Los Angeles Angels of Anaheim,TRUE
+ARI,Arizona Diamondbacks,TRUE
+ATH,Philadelphia Athletics,FALSE
+ATL,Atlanta Braves,TRUE
+BAL,Baltimore Orioles,TRUE
+BFB,Buffalo Bisons,FALSE
+BFL,Buffalo Bisons,FALSE
+BLC,Baltimore Canaries,
+BLO,Baltimore Orioles,FALSE
+BLT,Baltimore Terrapins,FALSE
+BLU,Baltimore Monumentals,FALSE
+BNA,Boston Red Stockings,
+BOS,Boston Red Sox,TRUE
+BRA,Brooklyn Atlantics,
+BRD,Boston Reds,FALSE
+BRG,Brooklyn Gladiators,FALSE
+BRS,Boston Reds,FALSE
+BTT,Brooklyn Tip-Tops,FALSE
+BUF,Buffalo Bisons,FALSE
+BWW,Brooklyn Ward's Wonders,FALSE
+CBK,Columbus Buckeyes,FALSE
+CBL,Cleveland Blues,FALSE
+CEN,Philadelphia Centennials,
+CFC,Cleveland Forest Citys,
+CHC,Chicago Cubs,TRUE
+CHH,Chicago Whales,FALSE
+CHP,Chicago Pirates,FALSE
+CHW,Chicago White Sox,TRUE
+CIN,Cincinnati Reds,TRUE
+CKK,Cincinnati Kelly's Killers,FALSE
+CLE,Cleveland Indians,TRUE
+CLI,Cleveland Infants,FALSE
+CLS,Columbus Solons,FALSE
+CLV,Cleveland Spiders,FALSE
+CNA,Chicago White Stockings,
+CNR,Cincinnati Reds,FALSE
+COL,Colorado Rockies,TRUE
+COR,Cincinnati Outlaw Reds,FALSE
+CPI,Chicago/Pittsburgh (Union League),FALSE
+DET,Detroit Tigers,TRUE
+DTN,Detroit Wolverines,FALSE
+ECK,Brooklyn Eckfords,
+FLA,Florida Marlins,TRUE
+HAR,Hartford Dark Blues,FALSE
+HNA,Hartford Dark Blues,
+HOU,Houston Astros,TRUE
+IBL,Indianapolis Blues,FALSE
+IHO,Indianapolis Hoosiers,FALSE
+IND,Indianapolis Hoosiers,FALSE
+KCC,Kansas City Cowboys,FALSE
+KCN,Kansas City Cowboys,FALSE
+KCP,Kansas City Packers,FALSE
+KCR,Kansas City Royals,TRUE
+KCU,Kansas City Cowboys,FALSE
+KEK,Fort Wayne Kekiongas,
+LAD,Los Angeles Dodgers,TRUE
+LGR,Louisville Grays,FALSE
+LOU,Louisville Colonels,FALSE
+MAN,Middletown Mansfields,
+MAR,Baltimore Marylands,
+MIL,Milwaukee Brewers,TRUE
+MIN,Minnesota Twins,TRUE
+MLA,Milwaukee Brewers,FALSE
+MLG,Milwaukee Grays,FALSE
+MLU,Milwaukee Brewers,FALSE
+NAT,Washington Nationals,
+NEW,Newark Pepper,FALSE
+NHV,New Haven Elm Citys,
+NNA,New York Mutuals,
+NYI,New York Giants,FALSE
+NYM,New York Mets,TRUE
+NYP,New York Metropolitans,FALSE
+NYU,New York Mutuals,FALSE
+NYY,New York Yankees,TRUE
+OAK,Oakland Athletics,TRUE
+OLY,Washington Olympics,
+PBB,Pittsburgh Burghers,FALSE
+PBS,Pittsburgh Rebels,FALSE
+PHA,Philadelphia Athletics,FALSE
+PHI,Philadelphia Phillies,TRUE
+PHK,Philadelphia Keystones,FALSE
+PHQ,Philadelphia Athletics,FALSE
+PIT,Pittsburgh Pirates,TRUE
+PNA,Philadelphia Athletics,
+PRO,Providence Grays,FALSE
+PWS,Philadelphia White Stockings,
+RES,Elizabeth Resolutes,
+RIC,Richmond Virginians,FALSE
+ROC,Rochester Broncos,FALSE
+ROK,Rockford Forest Citys,
+SBS,St. Louis Brown Stockings,FALSE
+SDP,San Diego Padres,TRUE
+SEA,Seattle Mariners,TRUE
+SFG,San Francisco Giants,TRUE
+SLI,St. Louis Terriers,FALSE
+SLM,St. Louis Maroons,FALSE
+SLR,St. Louis Red Stockings,
+SNA,St. Louis Brown Stockings,
+STL,St. Louis Cardinals,TRUE
+STP,St. Paul Apostles,FALSE
+SYR,Syracuse Stars,FALSE
+SYS,Syracuse Stars,FALSE
+TBD,Tampa Bay Rays,TRUE
+TEX,Texas Rangers,TRUE
+TLM,Toledo Maumees,FALSE
+TOL,Toledo Blue Stockings,FALSE
+TOR,Toronto Blue Jays,TRUE
+TRO,Troy Haymakers,
+TRT,Troy Trojans,FALSE
+WAS,Washington Senators,FALSE
+WBL,Washington Blue Legs,
+WES,Keokuk Westerns,
+WIL,Wilmington Quicksteps,FALSE
+WNA,Washington Nationals,FALSE
+WNL,Washington Nationals,FALSE
+WNT,Washington Nationals,
+WOR,Worcester Ruby Legs,FALSE
+WSN,Washington Nationals,TRUE
+WST,Washington Statesmen,FALSE
