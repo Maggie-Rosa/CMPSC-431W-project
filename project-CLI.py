@@ -1,6 +1,3 @@
-# import package
-# connect database
-# format strings to run queries
 import psycopg2
 import cmd
 
