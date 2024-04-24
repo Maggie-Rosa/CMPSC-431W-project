@@ -32,3 +32,4 @@ I have also included the Entity-Relationship Diagram from which the tales were b
 ## Detailed descriptions of each Functionality:
 1. INSERT
    - Allow adding new records to tables.
+2. 
