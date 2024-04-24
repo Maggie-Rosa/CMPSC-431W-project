@@ -18,6 +18,7 @@ allStarPlayerAttributes = "playerid, teamid, gameid, gp (optional), stratingpos 
 allStarGameAttributes = "gameid, yearid"
 hallOfFamePlayerAttributes = "playerid, yearid, ballots (optional), needed (optional), votes (optional), inducted, category"
 
+functionalities = 'Please type in the number of the option you would like to proceed with: \n \n 1. Insert Data \n 2. Delete Data \n 3. Update Data \n 4. Search Data \n 5. Aggregate Functions \n 6. Sorting \n 7. Joins \n 8. Grouping \n 9. Subqueries \n 10. Transactions \n 11. Error Handling \n 12. Exit'
 
 # Connect to postgres DB
 connection = psycopg2.connect("dbname=baseballdb user=postgres password=cmpsc431")
@@ -71,6 +72,7 @@ class MyCLI(cmd.Cmd):
         cursor.execute(f'INSERT INTO {table} ({columns}) VALUES ({values})')
     
         print("Successful insertion")
+        print(functionalities)
         
     # DELETE
     def do_2(self, line):
@@ -82,6 +84,7 @@ class MyCLI(cmd.Cmd):
         cursor.execute(f'DELETE FROM {table} WHERE ({whereCondition})')
     
         print("Successful deletion")
+        print(functionalities)
 
     # UPDATE
     def do_3(self, line): 
@@ -128,6 +131,7 @@ class MyCLI(cmd.Cmd):
             cursor.execute(f'UPDATE {table} SET {columnValues} WHERE ({whereCondition})')
     
         print("Successful update")
+        print(functionalities)
 
     # SEARCH
     def do_4(self, line):
@@ -175,7 +179,8 @@ class MyCLI(cmd.Cmd):
         # Retrieve query results
         records = cursor.fetchall()
 
-        print(records)       
+        print(records) 
+        print(functionalities)      
 
     # aggregate functions (MIN, MAX, SUM, COUNT, AVG)
     def do_5(self, line):
@@ -220,6 +225,7 @@ class MyCLI(cmd.Cmd):
         records = cursor.fetchall()
 
         print(records) 
+        print(functionalities)
 
     # sorting (ASC, DESC)
     def do_6(self, line):
@@ -263,6 +269,9 @@ class MyCLI(cmd.Cmd):
 
          # Retrieve query results
         records = cursor.fetchall()
+
+        print(records)
+        print(functionalities)
 
     # joins
     def do_7(self, line):
@@ -344,7 +353,8 @@ class MyCLI(cmd.Cmd):
         # Retrieve query results
         records = cursor.fetchall()
 
-        print(records)          
+        print(records)  
+        print(functionalities)        
 
     # grouping
     def do_8(self, line):
@@ -394,6 +404,7 @@ class MyCLI(cmd.Cmd):
         records = cursor.fetchall()
 
         print(records)
+        print(functionalities)
 
     # subqueries  
     def do_9(self, line):
@@ -459,17 +470,20 @@ class MyCLI(cmd.Cmd):
         # Retrieve query results
         records = cursor.fetchall()
 
-        print(records)       
+        print(records) 
+        print(functionalities)      
 
     # transactions
     def do_10(self, line):
         """Print a greeting."""
         print("I didn't know how to implement this because we never talked about how transactions work in SQL")
+        print(functionalities)
 
     # error handeling
     def do_11(self, line):
         """Print a greeting."""
         print("I didn't know how to implement this because we never talked about how error handeling works in SQL")
+        print(functionalities)
 
     # Exit
     def do_12(self, line):
