@@ -262,8 +262,10 @@ class MyCLI(cmd.Cmd):
             columnAttributes = hallOfFamePlayerAttributes
 
         sort = input(f'{columnAttributes}Please type the attributes you would you like to sort by followed a space and then either ASC or DESC, make sure to separate the your selections by commas\n>> ')
-        
-        cursor.execute(f'SELECT FROM {table} ORDER BY {sort}')
+
+        columnValues = input(f'{columnAttributes}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
+
+        cursor.execute(f'SELECT {columnValues} FROM {table} ORDER BY {sort}')
 
          # Retrieve query results
         records = cursor.fetchall()
@@ -275,7 +277,7 @@ class MyCLI(cmd.Cmd):
     def do_7(self, line):
         """Print a greeting."""
         query = ""
-        tableNum = input("Please type the number of tables you would like to perform joins on\n>> ")
+        tableNum = input("Please type the number of joins you would like to perform\n>> ")
 
         print("Please select the first table to perform join on")
         table1 = input(tableList)
@@ -311,7 +313,7 @@ class MyCLI(cmd.Cmd):
 
         columnValues1 = input(f'{columnAttributes1}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
         
-        query += (f'SELECT {columnValues1} FROM {table1}')
+        query += (f'SELECT {columnValues1} FROM {table1} ')
 
         tableCount = int(tableNum)
         while (tableCount != 0):
@@ -353,7 +355,7 @@ class MyCLI(cmd.Cmd):
             print(f'The attributes from the table selected are...\n{columnAttributes}\n')
             onCondition = input("Please type the condition on which you want to perform the join using the above attributes (from any of tables already selected) \n>> ")
 
-            query += (f'{join} ON {onCondition}')
+            query += (f'{join} {table} ON {onCondition}')
             
             tableCount -= 1
 
@@ -417,7 +419,7 @@ class MyCLI(cmd.Cmd):
         """Print a greeting."""
         query = ""
         close = ""
-        level = input("Please type the number of subqueries you would like to perform \n(ex. SELECT * FROM TableName WHERE Column IN (SELECT Column FROM AnotherTable); would be 2)")
+        level = input("Please type the number of subqueries you would like to perform \n(ex. SELECT * FROM TableName WHERE Column IN (SELECT Column FROM AnotherTable); would be 2)\n>> ")
         levelCount = int(level)
         while (levelCount != 0):
             print("Make sure to select a different table for each subquery")
@@ -462,14 +464,15 @@ class MyCLI(cmd.Cmd):
             if (whereCondition == "N/A"):
                 query += (f'SELECT {columnValues} FROM {table}')
             elif (levelCount == 1):
-                query += (f'SELECT {columnValues} FROM {table} WHERE ({whereCondition})')
+                query += (f'SELECT {columnValues} FROM {table} WHERE {whereCondition}')
             else:
-                query += (f'SELECT {columnValues} FROM {table} WHERE ({whereCondition}) (')
+                query += (f'SELECT {columnValues} FROM {table} WHERE {whereCondition} (')
             
             close += ")"
             levelCount -= 1
 
         query += close
+        query = query[:-1]
 
         # Execute a subquery
         cursor.execute(query)
