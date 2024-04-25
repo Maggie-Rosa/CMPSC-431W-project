@@ -94,11 +94,11 @@ I have also included the Entity-Relationship Diagram from which the tales were b
    - Now if you have completed those steps properly you will see the results.
      
 10. Transactions: Ensure consistency and reliability of database operations.
-   - This can be accomplished by typing 10 after the '>>>>'.
+    - This can be accomplished by typing 10 after the '>>>>'.
      
-11. Error Handling: Catch and handle exceptions gracefully during database operations
-   - This can be accomplished by typing 11 after the '>>>>'.
+12. Error Handling: Catch and handle exceptions gracefully during database operations
+    - This can be accomplished by typing 11 after the '>>>>'.
      
 12. Exit: Exits the CLI entirely
-   - This can be accomplished by typing 12 after the '>>>>'.
-   - The program will then exit completely.
+    - This can be accomplished by typing 12 after the '>>>>'.
+    - The program will then exit completely.
