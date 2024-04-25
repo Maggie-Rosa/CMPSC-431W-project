@@ -1,4 +1,4 @@
-# CMPSC-431W-project
+# CMPSC-431W-project 
 This repository is a CLI based implementation of a SQL database using PostgreSQL 16.
 The data tables come from https://www.kaggle.com/datasets/open-source-sports/baseball-databank
 The tables used in the actual implementation are included in the folder labeled "Tables". This is becuase I did not include every single cloumn from the Kaggle dataset and I also split a few of the tables into multiple tables so that they would follow Boyce-Codd Normal Form (BCNF).
