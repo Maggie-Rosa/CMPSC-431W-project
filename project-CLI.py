@@ -122,7 +122,7 @@ class MyCLI(cmd.Cmd):
 
         print(f'The following are columns you may update: {columnAttributes}')
         columnValues = input("Type the columnNames and the values you would like to set separated by commas, if the value is a string make sure to include the quotation marks around the value (ex. column1 = 'value1', column2 = value2, ...)\n>> ")
-        whereCondition = input("Please type the WHERE condition you would like to update on or type N/A for no where condition\n>> ")
+        whereCondition = input("Please type the WHERE condition you would like to update on or type N/A for no WHERE condition\n>> ")
 
         # Execute an UPDATE
         if (whereCondition == "N/A"):
@@ -168,7 +168,7 @@ class MyCLI(cmd.Cmd):
             columnAttributes = hallOfFamePlayerAttributes
 
         columnValues = input(f'{columnAttributes}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
-        whereCondition = input("Please type the WHERE condition you would like to select on or type N/A for no where condition\n>> ")
+        whereCondition = input("Please type the WHERE condition you would like to select on or type N/A for no WHERE condition\n>> ")
 
         # Execute a SELECT
         if (whereCondition == "N/A"):
@@ -261,9 +261,7 @@ class MyCLI(cmd.Cmd):
         elif (table == "HallOfFamePlayers"):
             columnAttributes = hallOfFamePlayerAttributes
 
-        columnValues = input(f'{columnAttributes}\nPlease type the attribute you would like to complete the the previously selected aggregate function on:\n>> ')
-
-        sort = input(f'{columnValues}Please type the attributes you would you like to sort by followed a space and then either ASC or DESC, make sure to separate the your selections by commas\n>> ')
+        sort = input(f'{columnAttributes}Please type the attributes you would you like to sort by followed a space and then either ASC or DESC, make sure to separate the your selections by commas\n>> ')
         
         cursor.execute(f'SELECT FROM {table} ORDER BY {sort}')
 
@@ -276,12 +274,12 @@ class MyCLI(cmd.Cmd):
     # joins
     def do_7(self, line):
         """Print a greeting."""
-        print("Please select the two tables you would like to perform a join on with the following prompts.\n")
-        table1 = input(tableList)
-        table2 = input(tableList)
+        query = ""
+        tableNum = input("Please type the number of tables you would like to perform joins on\n>> ")
 
+        print("Please select the first table to perform join on")
+        table1 = input(tableList)
         columnAttributes1 = teamAttributes
-        columnAttributes2 = teamAttributes
         if (table1 == "Team"):
             columnAttributes1 = teamAttributes
         elif (table1 == "Franchise"):
@@ -311,44 +309,56 @@ class MyCLI(cmd.Cmd):
         elif (table1 == "HallOfFamePlayers"):
             columnAttributes1 = hallOfFamePlayerAttributes
 
-        if (table2 == "Team"):
-            columnAttributes2 = teamAttributes
-        elif (table2 == "Franchise"):
-            columnAttributes2 = franchiseAttributes
-        elif (table2 == "Manager"):
-            columnAttributes2 = managerAttributes
-        elif (table2 == "TeamID"):
-            columnAttributes2 = teamIDAttributes
-        elif (table2 == "TeamWins"):
-            columnAttributes2 = teamWinsAttributes
-        elif (table2 == "Salary"):
-            columnAttributes2 = salaryAttributes
-        elif (table2 == "Pitchers"):
-            columnAttributes2 = pitchersAttributes
-        elif (table2 == "Fielders"):
-            columnAttributes2 = fieldersAttributes
-        elif (table2 == "Batters"):
-            columnAttributes2 = battersAttributes
-        elif (table2 == "Players"):
-            columnAttributes2 = playersAttributes
-        elif (table2 == "PlayerIDs"):
-            columnAttributes2 = playerIDAttributes
-        elif (table2 == "AllStarPlayers"):
-            columnAttributes2 = allStarPlayerAttributes
-        elif (table2 == "AllStarGames"):
-            columnAttributes2 = allStarGameAttributes
-        elif (table2 == "HallOfFamePlayers"):
-            columnAttributes2 = hallOfFamePlayerAttributes
-        join = input("Please type the join you would like to perform: INNER JOIN, LEFT JOIN, RIGHT JOIN, or OUTER JOIN\n>> ")
+        columnValues1 = input(f'{columnAttributes1}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
+        
+        query += (f'SELECT {columnValues1} FROM {table1}')
 
-        print(f'The attributes from the first table selected are...\n{columnAttributes1}\n')
-        print(f'The attributes from the second table selected are...\n{columnAttributes2}\n')
-        onCondition = input("Please type the condition on which you want to perform the join using the above attributes\n>> ")
+        tableCount = int(tableNum)
+        while (tableCount != 0):
+            join = input("Please type the join you would like to perform with the following table: INNER JOIN, LEFT JOIN, RIGHT JOIN, or OUTER JOIN\n>> ")
+            print("Make sure to select a different table for each join")
+            table = input(tableList)
+            columnAttributes = teamAttributes
+            if (table == "Team"):
+                columnAttributes = teamAttributes
+            elif (table == "Franchise"):
+                columnAttributes = franchiseAttributes
+            elif (table == "Manager"):
+                columnAttributes = managerAttributes
+            elif (table == "TeamID"):
+                columnAttributes = teamIDAttributes
+            elif (table == "TeamWins"):
+                columnAttributes = teamWinsAttributes
+            elif (table == "Salary"):
+                columnAttributes = salaryAttributes
+            elif (table == "Pitchers"):
+                columnAttributes = pitchersAttributes
+            elif (table == "Fielders"):
+                columnAttributes = fieldersAttributes
+            elif (table == "Batters"):
+                columnAttributes = battersAttributes
+            elif (table == "Players"):
+                columnAttributes = playersAttributes
+            elif (table == "PlayerIDs"):
+                columnAttributes = playerIDAttributes
+            elif (table == "AllStarPlayers"):
+                columnAttributes = allStarPlayerAttributes
+            elif (table == "AllStarGames"):
+                columnAttributes = allStarGameAttributes
+            elif (table == "HallOfFamePlayers"):
+                columnAttributes = hallOfFamePlayerAttributes
 
-        columnValues = input(f'{columnAttributes1}\n{columnAttributes2}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
+            columnValues = input(f'{columnAttributes}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
+
+            print(f'The attributes from the table selected are...\n{columnAttributes}\n')
+            onCondition = input("Please type the condition on which you want to perform the join using the above attributes (from any of tables already selected) \n>> ")
+
+            query += (f'{join} ON {onCondition}')
+            
+            tableCount -= 1
 
         # Execute a JOIN
-        cursor.execute(f'SELECT {columnValues} FROM {table1} {join} {table2} ON ({onCondition})')
+        cursor.execute(query)
 
         # Retrieve query results
         records = cursor.fetchall()
@@ -391,14 +401,10 @@ class MyCLI(cmd.Cmd):
             columnAttributes = hallOfFamePlayerAttributes
 
         columnValues = input(f'{columnAttributes}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
-        whereCondition = input("Please type the WHERE condition you would like to delete on\n>> ")
-        grouping = input("Please type the attribute you would like to group by or type N/A for no where condition\n>> ")
+        grouping = input("Please type the attributes you would like to group by seaparated by commas\n>> ")
 
         # Execute a SELECT with grouping
-        if (whereCondition == "N/A"):
-            cursor.execute(f'SELECT {columnValues} FROM {table} GROUP BY {grouping}')
-        else:
-            cursor.execute(f'SELECT {columnValues} FROM {table} WHERE ({whereCondition}) GROUP BY {grouping}')
+        cursor.execute(f'SELECT {columnValues} FROM {table} GROUP BY {grouping}')
 
         # Retrieve query results
         records = cursor.fetchall()
@@ -446,11 +452,12 @@ class MyCLI(cmd.Cmd):
             elif (table == "HallOfFamePlayers"):
                 columnAttributes = hallOfFamePlayerAttributes
 
+            
             columnValues = input(f'{columnAttributes}\nPlease type the attributes you would like to select separated by commas or just *:\n>> ')
             if (levelCount == 1):
-                whereCondition = input("Please type the WHERE condition you would like to delete on or type N/A for no where condition\n>> ")
+                whereCondition = input("Please type the WHERE condition you would like to select on or type N/A for no WHERE condition\n>> ")
             else:
-                whereCondition = input("Please type the WHERE condition you would like to delete on\n>> ")
+                whereCondition = input("Please type the WHERE condition you would like to select on\n>> ")
 
             if (whereCondition == "N/A"):
                 query += (f'SELECT {columnValues} FROM {table}')
